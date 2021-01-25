@@ -85,7 +85,7 @@ const FollowUpView = ({ evaluation }: FollowUpViewProps) => {
                     {barrierQuestions.map((question, idx) => {
                         const answer = question.answers
                             .filter(a => a.progression === viewProgression)
-                            .find(a => a.answeredBy?.azureUniqueId === participantUniqueId)
+                            .find(a => !!a)
                         return (
                             <div key={question.id}>
                                 <Divider />
